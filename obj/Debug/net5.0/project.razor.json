@@ -15667,6 +15667,11 @@
       "FilePath": "/home/lokesh/ProjectsAsp/BookStore/BookStore/Views/Home/ContactUs.cshtml",
       "TargetPath": "Views\\Home\\ContactUs.cshtml",
       "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/lokesh/ProjectsAsp/BookStore/BookStore/Views/Book/AddNewBook.cshtml",
+      "TargetPath": "Views\\Book\\AddNewBook.cshtml",
+      "FileKind": "mvc"
     }
   ],
   "SerializationFormat": "0.2"

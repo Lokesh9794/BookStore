@@ -4,7 +4,17 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] | Book Store Application</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+
+    <!--EnviromentTag helper -->
+ <environment include="Development">
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+ </environment>
+ <environment exclude="Development">
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+ </environment>
+
+
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
 <body>
@@ -32,6 +42,9 @@
         <li class="nav-item">
           <a class="nav-link " asp-controller="book" asp-action="getallbook">All Books</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link " asp-controller="book" asp-action="addnewbook">Add Book</a>
+        </li>
       </ul>
       <ul class="navbar-nav">
         <li class="nav-item">
@@ -54,6 +67,13 @@
 </footer>
 
     <!--Script files-->
+    <!--EnviromentTag helper -->
+    <environment include="Development">
+<script src="~/lib/jquery/dist/jquery.js"></script>
+    </environment>
+    <environment exclude="Development">
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+    </environment>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>

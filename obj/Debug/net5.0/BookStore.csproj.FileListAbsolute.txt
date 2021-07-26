@@ -718,3 +718,4 @@ F:/AspCore/BookStore/obj/Debug/net5.0/Razor/Views/Book/GetBooK.cshtml.g.cs
 /home/lokesh/ProjectsAsp/BookStore/BookStore/obj/Debug/net5.0/BookStore.dll
 /home/lokesh/ProjectsAsp/BookStore/BookStore/obj/Debug/net5.0/ref/BookStore.dll
 /home/lokesh/ProjectsAsp/BookStore/BookStore/obj/Debug/net5.0/BookStore.genruntimeconfig.cache
+/home/lokesh/ProjectsAsp/BookStore/BookStore/obj/Debug/net5.0/Razor/Views/Book/AddNewBook.cshtml.g.cs
