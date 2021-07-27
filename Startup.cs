@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using BookStore.Data;
 
 namespace BookStore
 {
@@ -23,7 +24,7 @@ namespace BookStore
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
+            services.AddDbContext<BookStoreContext>();
             services.AddControllersWithViews();
 
 #if DEBUG // due to this razor runtime compilation only take place in development env
