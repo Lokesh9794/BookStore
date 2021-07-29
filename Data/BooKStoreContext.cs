@@ -12,7 +12,7 @@ namespace BookStore.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Servers=.;Database=BookStore;Integrated Security=True;");
+            optionsBuilder.UseSqlServer("Server=lokesh-Inspiron-3542 ;Database=BookStore; Integrated Security=True;");
             base.OnConfiguring(optionsBuilder);
         }
     }
