@@ -14,9 +14,9 @@ namespace BookStore.Controllers
     {
         private readonly BookRepository _bookrepo =null;
 
-        public BookController()
+        public BookController(BookRepository bookRepository)
         {
-            _bookrepo= new BookRepository();
+            _bookrepo= bookRepository;
         }
         public ViewResult GetAllBooK()
         {
@@ -35,14 +35,20 @@ namespace BookStore.Controllers
             return _bookrepo.SearchBook(bookName,authorName);
         }
 
-        public ViewResult AddNewBook()
+        public ViewResult AddNewBook(bool isSuccess=false, int bookId=0)
         {
+            ViewBag.IsSuccess=isSuccess;
+            ViewBag.BookId=bookId;
             return View();
         }
 
         [HttpPost]
-        public ViewResult AddNewBook(BookModel bookModel)
+        public async Task<IActionResult>  AddNewBook(BookModel bookModel)
         {
+           int id= await _bookrepo.AddNewBook(bookModel);
+           if(id>0){
+               return RedirectToAction(nameof(AddNewBook),new{ isSuccess=true, bookId=id});
+           }
             return View();
         }
     }

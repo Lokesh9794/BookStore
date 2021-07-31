@@ -9,6 +9,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using BookStore.Data;
+using BookStore.Repo;
 
 namespace BookStore
 {
@@ -26,7 +27,7 @@ namespace BookStore
         {
             services.AddDbContext<BookStoreContext>();
             services.AddControllersWithViews();
-
+            services.AddScoped<BookRepository,BookRepository>();
 #if DEBUG // due to this razor runtime compilation only take place in development env
             services.AddRazorPages().AddRazorRuntimeCompilation();
 #endif

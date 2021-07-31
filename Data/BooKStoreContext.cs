@@ -12,7 +12,7 @@ namespace BookStore.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Servers=.;Database=BookStore;Integrated Security=True;");
+            optionsBuilder.UseSqlServer("Server=localhost\\SQLEXPRESS;Database=BookStore;Trusted_Connection=True;");
             base.OnConfiguring(optionsBuilder);
         }
     }
