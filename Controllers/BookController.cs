@@ -24,9 +24,9 @@ namespace BookStore.Controllers
             return View(data);
         }
 
-        public ViewResult GetBooK(int id)
+        public async Task<ViewResult >GetBooK(int id)
         {
-            var data= _bookrepo.GetBookById(id);
+            var data= await _bookrepo.GetBookById(id);
             return View(data);
         }
 
