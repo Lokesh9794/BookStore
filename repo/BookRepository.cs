@@ -21,7 +21,7 @@ namespace BookStore.Repo
                     CreatedOn=DateTime.UtcNow,
                     Title =model.Title,
                     Description=model.Description,
-                    Pages=model.Pages,
+                    Pages=model.Pages.HasValue ? model.Pages.Value : 0,
                     UpdatedOn=DateTime.UtcNow
             };
 
