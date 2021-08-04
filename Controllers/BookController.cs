@@ -54,7 +54,7 @@ namespace BookStore.Controllers
            }   
             }
             ModelState.AddModelError("","In this line we can add any custom error message"); //Add custom error massgse along with validation
-            return View();
+            
         }
     }
 }
