@@ -37,9 +37,13 @@ namespace BookStore.Controllers
 
         public ViewResult AddNewBook(bool isSuccess=false, int bookId=0)
         {
+            var model =new BookModel()
+            {
+                Language="English"
+            };
             ViewBag.IsSuccess=isSuccess;
             ViewBag.BookId=bookId;
-            return View();
+            return View(model);
         }
 
         [HttpPost]
@@ -53,7 +57,7 @@ namespace BookStore.Controllers
                return RedirectToAction(nameof(AddNewBook),new{ isSuccess=true, bookId=id});
            }   
             }
-            ModelState.AddModelError("","In this line we can add any custom error message"); //Add custom error massgse along with validation
+           // ModelState.AddModelError("","In this line we can add any custom error message"); //Add custom error massgse along with validation
             return View();
         }
     }

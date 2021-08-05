@@ -20,6 +20,7 @@ namespace BookStore.Repo
                     Author=model.Author,
                     CreatedOn=DateTime.UtcNow,
                     Title =model.Title,
+                    Language=model.Language,
                     Description=model.Description,
                     Pages=model.Pages.HasValue ? model.Pages.Value : 0,
                     UpdatedOn=DateTime.UtcNow

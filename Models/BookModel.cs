@@ -5,9 +5,9 @@ namespace BookStore.Models
 {
     public class BookModel
     {
-        [DataType(DataType.Date)] //used to added  automatically datatype in view
-        [Display(Name="Choose Date")]  // this property is used to display the name of lable 
-        public int MyCustomField {get;set;} 
+      //  [DataType(DataType.Date)] //used to added  automatically datatype in view
+       // [Display(Name="Choose Date")]  // this property is used to display the name of lable 
+       // public int MyCustomField {get;set;} 
         public int Id {get;set;}
         [StringLength(100,MinimumLength=5)]
         [Required(ErrorMessage = "*Please enter the title of the book")]

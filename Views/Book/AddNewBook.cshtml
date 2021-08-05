@@ -13,14 +13,25 @@
   </button>
 </div>
     }
-<form method="post" asp-action="AddNewBook" asp-controller="book" novalidate>
+<form method="post" asp-action="AddNewBook" asp-controller="book" >
   <div asp-validation-summary="All" class="text-danger"></div>
 
 <div class="form-group">
+    <label asp-for="Language"></label>
+    <select asp-for="Language" class="form-control" required>
+      <option value="">Please choose a language</option>
+      <option value="Hindi">Hindi(Users only)</option>
+      <option value="English">English(Global Language)</option>
+      <option value="French">French(custom)</option>
+    </select>
+    <span asp-validation-for="Language" class="text-danger" ></span> 
+  </div>
+
+<!--<div class="form-group">
     <label asp-for="MyCustomField"></label>
     <input asp-for="MyCustomField" class="form-control" >
     <span asp-validation-for="MyCustomField" class="text-danger" ></span> 
-  </div>
+  </div>-->
 
 
 
