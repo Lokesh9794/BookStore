@@ -18,11 +18,8 @@
 
 <div class="form-group">
     <label asp-for="Language"></label>
-    <select asp-for="Language" class="form-control" required>
+    <select asp-for="Language" class="form-control" asp-items="new SelectList(ViewBag.Language)" >
       <option value="">Please choose a language</option>
-      <option value="Hindi">Hindi(Users only)</option>
-      <option value="English">English(Global Language)</option>
-      <option value="French">French(custom)</option>
     </select>
     <span asp-validation-for="Language" class="text-danger" ></span> 
   </div>
