@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using BookStore.Models;
 using BookStore.Repo;
-
+using Microsoft.AspNetCore.Mvc.Rendering;
 namespace BookStore.Controllers
 {
     public class BookController:Controller
@@ -39,10 +39,10 @@ namespace BookStore.Controllers
         {
            var model =new BookModel()
             {
-                Language="English"
+                Language="3"
             };
-
-                ViewBag.Language= new List<string>(){"Hindi" , "English","French"};
+                ViewBag.Language= new SelectList(GetLanguages(),"Id","Text");
+               // ViewBag.Language= new List<string>(){"Hindi" , "English","French"};
             ViewBag.IsSuccess=isSuccess;
             ViewBag.BookId=bookId;
             return View(model);
@@ -59,9 +59,21 @@ namespace BookStore.Controllers
                return RedirectToAction(nameof(AddNewBook),new{ isSuccess=true, bookId=id});
            }   
             }
-             ViewBag.Language= new List<string>(){"Hindi" , "English","French"};
+
+            ViewBag.Language= new SelectList(GetLanguages(),"Id","Text");
+            // ViewBag.Language= new List<string>(){"Hindi" , "English","French"};
            // ModelState.AddModelError("","In this line we can add any custom error message"); //Add custom error massgse along with validation
             return View();
+        }
+
+        private List<LanguageModel> GetLanguages()
+        {
+            return new List<LanguageModel>()
+            {
+            new LanguageModel() { Id=1,Text = "English"},
+            new LanguageModel() { Id=2,Text = "Hindi"},
+            new LanguageModel() { Id=3,Text = "Urdu"},
+            };
         }
     }
 }
