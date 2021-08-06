@@ -43,14 +43,6 @@ namespace BookStore.Controllers
                // Language="3"
             };
  
-                ViewBag.Language= new List<SelectListItem>()
-                {
-                    new SelectListItem(){Text="Hindi", Value="1"},
-                    new SelectListItem(){Text="Punjabi", Value="2"},
-                    new SelectListItem(){Text="Tamil", Value="3"},
-                    new SelectListItem(){Text="English", Value="4"},
-                }; 
-               // ViewBag.Language= new List<string>(){"Hindi" , "English","French"};
             ViewBag.IsSuccess=isSuccess;
             ViewBag.BookId=bookId;
             return View(model);
@@ -68,13 +60,7 @@ namespace BookStore.Controllers
            }   
             }
 
-             ViewBag.Language= new List<SelectListItem>()
-                {
-                    new SelectListItem(){Text="Hindi", Value="1"},
-                    new SelectListItem(){Text="Punjabi", Value="2"},
-                    new SelectListItem(){Text="Tamil", Value="3"},
-                    new SelectListItem(){Text="English", Value="4"},
-                }; 
+            
             return View();
         }
 
