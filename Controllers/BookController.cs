@@ -1,3 +1,4 @@
+using System.Net.Mime;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -41,7 +42,11 @@ namespace BookStore.Controllers
             {
                 Language="3"
             };
-                ViewBag.Language= new SelectList(GetLanguages(),"Id","Text");
+                ViewBag.Language= GetLanguages().Select(x=> new SelectListItem()
+                {
+                    Text=x.Text,
+                    Value=x.Id.ToString(),
+                }).ToList();
                // ViewBag.Language= new List<string>(){"Hindi" , "English","French"};
             ViewBag.IsSuccess=isSuccess;
             ViewBag.BookId=bookId;
