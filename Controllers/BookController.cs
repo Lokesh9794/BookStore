@@ -42,16 +42,13 @@ namespace BookStore.Controllers
             {
                // Language="3"
             };
-
-            var group1= new SelectListGroup(){Name="Group 1"}; 
-            var group2= new SelectListGroup(){Name="Group 2"}; 
-            var group3= new SelectListGroup(){Name="Group 3"}; 
+ 
                 ViewBag.Language= new List<SelectListItem>()
                 {
-                    new SelectListItem(){Text="Hindi", Value="1",Group=group1},
-                    new SelectListItem(){Text="Punjabi", Value="2",Group=group1},
-                    new SelectListItem(){Text="Tamil", Value="3",Group=group2},
-                    new SelectListItem(){Text="English", Value="4",Group=group1},
+                    new SelectListItem(){Text="Hindi", Value="1"},
+                    new SelectListItem(){Text="Punjabi", Value="2"},
+                    new SelectListItem(){Text="Tamil", Value="3"},
+                    new SelectListItem(){Text="English", Value="4"},
                 }; 
                // ViewBag.Language= new List<string>(){"Hindi" , "English","French"};
             ViewBag.IsSuccess=isSuccess;
@@ -71,9 +68,13 @@ namespace BookStore.Controllers
            }   
             }
 
-            ViewBag.Language= new SelectList(GetLanguages(),"Id","Text");
-            // ViewBag.Language= new List<string>(){"Hindi" , "English","French"};
-           // ModelState.AddModelError("","In this line we can add any custom error message"); //Add custom error massgse along with validation
+             ViewBag.Language= new List<SelectListItem>()
+                {
+                    new SelectListItem(){Text="Hindi", Value="1"},
+                    new SelectListItem(){Text="Punjabi", Value="2"},
+                    new SelectListItem(){Text="Tamil", Value="3"},
+                    new SelectListItem(){Text="English", Value="4"},
+                }; 
             return View();
         }
 
