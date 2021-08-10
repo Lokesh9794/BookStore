@@ -19,7 +19,7 @@ namespace BookStore.Models
          [StringLength(500)]
         public string Description{get;set;}
         public string Category{get;set;}
-        public string Language{get;set;}
+        public int LanguageId{get;set;}
         [Required(ErrorMessage="Please choose the language for book")]
         public LanguageEnum LanguageEnum  {get;set;}
         [Required(ErrorMessage="*Please enter the total number of pages")]
