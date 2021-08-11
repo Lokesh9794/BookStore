@@ -19,7 +19,7 @@
 
 <div class="form-group">
     <label asp-for="LanguageId"></label>
-    <select asp-for="LanguageId" class="form-control" asp-items="Html.GetEnumSelectList<LanguageEnum>()" >
+    <select asp-for="LanguageId" class="form-control" asp-items="ViewBag.lanaguage" >
       <option value="">Please choose a language</option>
     </select>
     <span asp-validation-for="LanguageId" class="text-danger" ></span> 

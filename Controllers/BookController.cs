@@ -8,20 +8,23 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using BookStore.Models;
 using BookStore.Repo;
+using BookStore.repo;
 using Microsoft.AspNetCore.Mvc.Rendering;
 namespace BookStore.Controllers
 {
     public class BookController:Controller
     {
         private readonly BookRepository _bookrepo =null;
+        private readonly LanguageRepository _langrepo =null;
 
-        public BookController(BookRepository bookRepository)
+        public BookController(BookRepository bookRepository, LanguageRepository langrepository)
         {
             _bookrepo= bookRepository;
+            _langrepo= langrepository;
         }
-        public ViewResult GetAllBooK()
+        public async Task<ViewResult> GetAllBooK()
         {
-            var  data=_bookrepo.GetAllBook();
+            var  data=await _bookrepo.GetAllBook();
             return View(data);
         }
 
@@ -36,13 +39,15 @@ namespace BookStore.Controllers
             return _bookrepo.SearchBook(bookName,authorName);
         }
 
-        public ViewResult AddNewBook(bool isSuccess=false, int bookId=0)
+        public async Task<ViewResult >AddNewBook(bool isSuccess=false, int bookId=0)
         {
            var model =new BookModel()
             {
                // Language="3"
             };
- 
+
+            ViewBag.lanaguage =new SelectList(await _langrepo.GetLanguages(),"Id","Name");
+
             ViewBag.IsSuccess=isSuccess;
             ViewBag.BookId=bookId;
             return View(model);
@@ -59,19 +64,9 @@ namespace BookStore.Controllers
                return RedirectToAction(nameof(AddNewBook),new{ isSuccess=true, bookId=id});
            }   
             }
-
+           ViewBag.lanaguage =new SelectList(await _langrepo.GetLanguages(),"Id","Name");
             
             return View();
-        }
-
-        private List<LanguageModel> GetLanguages()
-        {
-            return new List<LanguageModel>()
-            {
-            new LanguageModel() { Id=1,Text = "English"},
-            new LanguageModel() { Id=2,Text = "Hindi"},
-            new LanguageModel() { Id=3,Text = "Urdu"},
-            };
         }
     }
 }

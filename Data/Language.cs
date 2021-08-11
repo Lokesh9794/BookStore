@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 namespace BookStore.Data
 {
     public class Language
@@ -7,5 +8,7 @@ namespace BookStore.Data
         public string Name { get; set; }
 
         public string Description { get; set; }
+
+        public ICollection<Books> Books { get; set; }
     }
 }
