@@ -2,6 +2,7 @@ using System;
 using System.ComponentModel.DataAnnotations;
 using System.Collections.Generic;
 using BookStore.Enum;
+using BookStore.Helper;
 
 namespace BookStore.Models
 {
@@ -11,8 +12,9 @@ namespace BookStore.Models
        // [Display(Name="Choose Date")]  // this property is used to display the name of lable 
        // public int MyCustomField {get;set;} 
         public int Id {get;set;}
-        [StringLength(100,MinimumLength=5)]
-        [Required(ErrorMessage = "*Please enter the title of the book")]
+        //[StringLength(100,MinimumLength=5)]
+       // [Required(ErrorMessage = "*Please enter the title of the book")]
+        [MyCustomValidation]
         public string Title {get;set;}
         [Required(ErrorMessage="*Please enter the Author name")]
         public string Author {get;set;} 
