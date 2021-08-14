@@ -13,7 +13,7 @@ namespace BookStore.Helper
                     return ValidationResult.Success;
                 }
             }
-            return new ValidationResult("BookName Does not have desired value");
+            return new ValidationResult(ErrorMessage ?? "BookName Does not have desired value");
         }
     }
 }
