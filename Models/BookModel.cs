@@ -13,8 +13,8 @@ namespace BookStore.Models
        // public int MyCustomField {get;set;} 
         public int Id {get;set;}
         //[StringLength(100,MinimumLength=5)]
-       // [Required(ErrorMessage = "*Please enter the title of the book")]
-        [MyCustomValidation ("Book")]
+       [Required(ErrorMessage = "*Please enter the title of the book")]
+        //[MyCustomValidation ("Book")]
         public string Title {get;set;}
         [Required(ErrorMessage="*Please enter the Author name")]
         public string Author {get;set;} 

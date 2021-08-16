@@ -32,6 +32,11 @@ namespace BookStore
             services.AddScoped<LanguageRepository,LanguageRepository>();
 #if DEBUG // due to this razor runtime compilation only take place in development env
             services.AddRazorPages().AddRazorRuntimeCompilation();
+            //Unomment this to disable client side validation
+            //.AddViewOptions(option =>
+           // {
+             //   option.HtmlHelperOptions.ClientValidationEnabled= false;
+            //});
 #endif
         }
 
