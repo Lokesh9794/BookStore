@@ -14,7 +14,14 @@
   </button>
 </div>
     }
-<form method="post" asp-action="AddNewBook" asp-controller="book" >
+    <!--Loader start-->
+<div class="d-flex justify-content-center">
+  <div class="spinner-border" role="status"  id="myLoader" style="display:none;" >
+    <span class="sr-only">Please wait...</span>
+  </div>
+</div>
+ <!--Loader End-->
+<form method="post" asp-action="AddNewBook" asp-controller="book" data-ajax="true" data-ajax-complete="myComplete" data-ajax-success="mysuccess" data-ajax-loading="#myLoader">
   <div asp-validation-summary="All" class="text-danger"></div>
 
 <div class="form-group">
@@ -49,3 +56,15 @@
   </div>
 </form>
 </div>
+
+@section scripts {
+  <script>
+    function myComplete(data) {
+      alert("Complete is complete!");
+    }
+
+    function mysuccess(data) {
+      alert("success complete!");
+    }
+  </script>
+}
