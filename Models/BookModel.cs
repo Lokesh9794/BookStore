@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using BookStore.Enum;
 using BookStore.Helper;
 
+using Microsoft.AspNetCore.Http;
+
 namespace BookStore.Models
 {
     public class BookModel
@@ -26,6 +28,9 @@ namespace BookStore.Models
         public string Language{get;set;}
         [Required(ErrorMessage="*Please enter the total number of pages")]
         public int? Pages {get;set;}
+        [Display(Name="Choose A cover photo")]
+        [Required]
+        public IFormFile CoverPhoto{get;set;}
 
     }
 }

@@ -1,5 +1,6 @@
 using System.Net.Mime;
 using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -10,17 +11,23 @@ using BookStore.Models;
 using BookStore.Repo;
 using BookStore.repo;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore;
+
+
 namespace BookStore.Controllers
 {
     public class BookController:Controller
     {
         private readonly BookRepository _bookrepo =null;
         private readonly LanguageRepository _langrepo =null;
+        private readonly IWebHostEnvironment _webHostEnvironment;
 
-        public BookController(BookRepository bookRepository, LanguageRepository langrepository)
+        public BookController(BookRepository bookRepository, LanguageRepository langrepository, IWebHostEnvironment webHostEnvironment)
         {
             _bookrepo= bookRepository;
             _langrepo= langrepository;
+            _webHostEnvironment= webHostEnvironment;
         }
         public async Task<ViewResult> GetAllBooK()
         {
@@ -58,6 +65,16 @@ namespace BookStore.Controllers
         {
             if (ModelState.IsValid)
             {
+                if(bookModel.CoverPhoto !=null)
+                {
+                    string folder="books/CoverPhoto/";
+                    folder += Guid.NewGuid().ToString()+"_"+bookModel.CoverPhoto.FileName;
+                    string serverFolder=Path.Combine( _webHostEnvironment.WebRootPath,folder);
+
+                  await bookModel.CoverPhoto.CopyToAsync(new FileStream(serverFolder,FileMode.Create));
+
+                }
+
              int id= await _bookrepo.AddNewBook(bookModel);
 
            if(id>0){
