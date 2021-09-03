@@ -24,7 +24,8 @@ namespace BookStore.Repo
                     LanguageId=model.LanguageId, 
                     Description=model.Description,
                     Pages=model.Pages.HasValue ? model.Pages.Value : 0,
-                    UpdatedOn=DateTime.UtcNow
+                    UpdatedOn=DateTime.UtcNow,
+                    CoverImageUrl=model.CoverImageUrl,
             };
 
            await _context.Books.AddAsync(newBook);
@@ -44,6 +45,7 @@ namespace BookStore.Repo
                       Language = book.Language.Name,
                       Title = book.Title,
                       Pages = book.Pages,
+                      CoverImageUrl=book.CoverImageUrl,
                       //CoverImageUrl = book.CoverImageUrl
                   }).ToListAsync();
         }
@@ -60,6 +62,7 @@ namespace BookStore.Repo
                Language=book.Language.Name,
                Title=book.Title,
                Pages=book.Pages,
+               CoverImageUrl=book.CoverImageUrl,
            }).FirstOrDefaultAsync();
         }
 

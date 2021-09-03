@@ -32,5 +32,7 @@ namespace BookStore.Models
         [Required]
         public IFormFile CoverPhoto{get;set;}
 
+        public string CoverImageUrl { get; set; }
+
     }
 }

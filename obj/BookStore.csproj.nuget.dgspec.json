@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\AspCore\\BookStore\\BookStore.csproj": {}
+    "e:\\AspCore\\BookStore\\BookStore.csproj": {}
   },
   "projects": {
-    "E:\\AspCore\\BookStore\\BookStore.csproj": {
+    "e:\\AspCore\\BookStore\\BookStore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\AspCore\\BookStore\\BookStore.csproj",
+        "projectUniqueName": "e:\\AspCore\\BookStore\\BookStore.csproj",
         "projectName": "BookStore",
-        "projectPath": "E:\\AspCore\\BookStore\\BookStore.csproj",
+        "projectPath": "e:\\AspCore\\BookStore\\BookStore.csproj",
         "packagesPath": "C:\\Users\\Lokesh\\.nuget\\packages\\",
-        "outputPath": "E:\\AspCore\\BookStore\\obj\\",
+        "outputPath": "e:\\AspCore\\BookStore\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Lokesh\\AppData\\Roaming\\NuGet\\NuGet.Config"
