@@ -1,4 +1,8 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
 namespace BookStore.Data
 {
     public class Books
@@ -15,5 +19,7 @@ namespace BookStore.Data
         public DateTime? UpdatedOn{get; set;}
 
         public Language Language {get;set;} //this how to build relation b/w two table
+
+        public ICollection<BookGallery> bookGallery{get; set;}
     }
 }

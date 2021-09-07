@@ -34,5 +34,10 @@ namespace BookStore.Models
 
         public string CoverImageUrl { get; set; }
 
+        [Required]
+        public IFormFileCollection GallaryFiles{get;set;}
+
+        public List<GalleryModel>Gallery{get ;set; }
+
     }
 }
