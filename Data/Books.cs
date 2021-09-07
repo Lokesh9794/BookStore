@@ -14,6 +14,7 @@ namespace BookStore.Data
         public string Category{get;set;}
         public int LanguageId{get;set;}
         public string CoverImageUrl {get;set;} 
+        public string BookpdfUrl {get;set;} 
         public int Pages {get;set;}
         public DateTime? CreatedOn{get; set;}
         public DateTime? UpdatedOn{get; set;}

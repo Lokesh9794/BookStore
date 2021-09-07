@@ -26,6 +26,7 @@ namespace BookStore.Repo
                     Pages=model.Pages.HasValue ? model.Pages.Value : 0,
                     UpdatedOn=DateTime.UtcNow,
                     CoverImageUrl=model.CoverImageUrl,
+                    BookpdfUrl=model.BookpdfUrl,
             };
             newBook.bookGallery=new List<BookGallery>();
              foreach (var file in model.Gallery)
@@ -55,7 +56,7 @@ namespace BookStore.Repo
                       Title = book.Title,
                       Pages = book.Pages,
                       CoverImageUrl=book.CoverImageUrl,
-                      //CoverImageUrl = book.CoverImageUrl
+                     
                   }).ToListAsync();
         }
 
@@ -77,7 +78,8 @@ namespace BookStore.Repo
                    Id=g.Id,
                    Name=g.Name,
                    URL=g.URL,
-               }).ToList()
+               }).ToList(),
+               BookpdfUrl=book.BookpdfUrl,
            }).FirstOrDefaultAsync();
         }
 

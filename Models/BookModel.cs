@@ -21,7 +21,7 @@ namespace BookStore.Models
         [Required(ErrorMessage="*Please enter the Author name")]
         public string Author {get;set;} 
          [StringLength(500)]
-        public string Description{get;set;}
+        public string Description{get;set;} 
         public string Category{get;set;}
         [Required(ErrorMessage="*Please Choose Language of Your book")]
         public int LanguageId{get;set;}
@@ -38,6 +38,10 @@ namespace BookStore.Models
         public IFormFileCollection GallaryFiles{get;set;}
 
         public List<GalleryModel>Gallery{get ;set; }
+        [Display(Name="Choose Pdf of Your Book")]
+        [Required]
+        public IFormFile BookPdf{get;set; }
+        public string BookpdfUrl { get; set; }
 
     }
 }
