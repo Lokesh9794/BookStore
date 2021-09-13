@@ -1138,3 +1138,6 @@ E:\AspCore\BookStore\obj\Debug\net5.0\BookStore.pdb
 E:\AspCore\BookStore\obj\Debug\net5.0\BookStore.genruntimeconfig.cache
 E:\AspCore\BookStore\bin\Debug\net5.0\Humanizer.dll
 E:\AspCore\BookStore\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll
+E:\AspCore\BookStore\obj\Debug\net5.0\Razor\Views\Shared\_footer.cshtml.g.cs
+E:\AspCore\BookStore\obj\Debug\net5.0\Razor\Views\Shared\_header.cshtml.g.cs
+E:\AspCore\BookStore\obj\Debug\net5.0\Razor\Views\Shared\_bookThumbnail.cshtml.g.cs

@@ -10,21 +10,7 @@
         @foreach (var book in Model)
         {
                             <div class="col-md-4">
-                                <div class="card mb-4 shadow-sm">
-                                    <img src="@book.CoverImageUrl" class="card-img-top" alt="from database">
-                                    <div class="card-body">
-                                        <h5 class="card-title">@book.Title</h5>
-                                        <p class="card-text">@book.Description</p>
-                                        <div class="d-flex justify-content-between aling-items-center">
-                                            <div class="btn-group">
-                                                <a asp-controller="book" asp-route-id="@book.Id" asp-action="getbook" class="btn btn-sm btn-outline-secondary">View Detail</a>
-                                            </div>
-                                            <small class="text-mutes">
-                                @book.Author
-                                            </small>
-                                        </div>
-                                    </div>
-                                </div>
+                                <partial name="_bookThumbnail" model="@book"/>
                             </div>
         }
 
